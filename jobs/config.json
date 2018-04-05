@@ -4621,7 +4621,7 @@
       "sig-autoscaling"
     ]
   },
-  "ci-kubernetes-e2e-gci-gce-autoscaling-hpa": {
+  "ci-kubernetes-e2e-gci-gce-autoscaling-hpa-sd": {
     "args": [
       "--check-leaked-resources",
       "--cluster=hpa",
@@ -4631,7 +4631,25 @@
       "--gcp-project=k8s-jkns-gci-autoscaling",
       "--gcp-zone=us-central1-c",
       "--provider=gce",
-      "--test_args=--ginkgo.focus=\\[Feature:CustomMetricsAutoscaling\\] --ginkgo.skip=\\[Flaky\\] --minStartupPods=8",
+      "--test_args=--ginkgo.focus=\\[Feature:CustomMetricsAutoscalingStackdriver\\] --ginkgo.skip=\\[Flaky\\] --minStartupPods=8",
+      "--timeout=300m"
+    ],
+    "scenario": "kubernetes_e2e",
+    "sigOwners": [
+      "sig-autoscaling"
+    ]
+  },
+  "ci-kubernetes-e2e-gci-gce-autoscaling-hpa-cm": {
+    "args": [
+      "--check-leaked-resources",
+      "--env-file=jobs/platform/gce.env",
+      "--extract=ci/latest",
+      "--gcp-node-image=gci",
+      "--gcp-zone=us-central1-f",
+      "--gcp-project=bskiba-gke-dev",
+      "--provider=gce",
+      "--test=false",
+      "--test-cmd=./hack/run-e2e.sh",
       "--timeout=300m"
     ],
     "scenario": "kubernetes_e2e",

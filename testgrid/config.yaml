@@ -239,8 +239,10 @@ test_groups:
   gcs_prefix: kubernetes-jenkins/logs/ci-kubernetes-e2e-gci-gce-autoscaling
 - name: ci-kubernetes-e2e-gci-gce-autoscaling-migs
   gcs_prefix: kubernetes-jenkins/logs/ci-kubernetes-e2e-gci-gce-autoscaling-migs
-- name: ci-kubernetes-e2e-gci-gce-autoscaling-hpa
-  gcs_prefix: kubernetes-jenkins/logs/ci-kubernetes-e2e-gci-gce-autoscaling-hpa
+- name: ci-kubernetes-e2e-gci-gce-autoscaling-hpa-sd
+  gcs_prefix: kubernetes-jenkins/logs/ci-kubernetes-e2e-gci-gce-autoscaling-hpa-sd
+- name: ci-kubernetes-e2e-gci-gce-autoscaling-hpa-cm
+  gcs_prefix: kubernetes-jenkins/logs/ci-kubernetes-e2e-gci-gce-autoscaling-hpa-cm
 - name: ci-kubernetes-e2e-gci-gce-autoscaling-migs-hpa
   gcs_prefix: kubernetes-jenkins/logs/ci-kubernetes-e2e-gci-gce-autoscaling-migs-hpa
 - name: ci-kubernetes-e2e-autoscaling-vpa-recommender
@@ -4208,8 +4210,10 @@ dashboards:
 
 - name: sig-autoscaling-hpa
   dashboard_tab:
-  - name: gci-gce-autoscaling-hpa
-    test_group_name: ci-kubernetes-e2e-gci-gce-autoscaling-hpa
+  - name: gci-gce-autoscaling-hpa-sd
+    test_group_name: ci-kubernetes-e2e-gci-gce-autoscaling-hpa-sd
+  - name: gci-gce-autoscaling-hpa-cm
+    test_group_name: ci-kubernetes-e2e-gci-gce-autoscaling-hpa-cm
   - name: gci-gce-autoscaling-migs-hpa
     test_group_name: ci-kubernetes-e2e-gci-gce-autoscaling-migs-hpa
   - name: gci-gke-autoscaling-hpa
